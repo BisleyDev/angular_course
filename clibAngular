@@ -1,0 +1,49 @@
+    CLI
+ng g c NAME --skip-tests     - create component
+ng g d NAME --skip-tests     - create directive
+ng g s NAME --skip-tests     - create service
+
+    ANGULAR
+[src]='img'       - одностороння привязка к переменной в html
+(click)='func'    - обратное связывание
+[(ngModel)]
+FormModule        - импорт модуля для двухстороннего бинда
+[(ngModule)]=''   - двухсторонний бинд
+[ngStyle]=''      - возможность прописывать динамический css
+[ngClass]='{
+    key:value}'   - key -имя класса, value -условие, при котором его добавлять
+#name             - локальная ссылка на блок в html
+    Структурные директивы (пишутся со *)
+*ngIf='bool; else nameHref'      - будет ли нода рендерится, nameHref - линк на блок <ng-template #nameHref></ng-template>
+[ngSwitch]='value'
+    *ngSwitchCase='result'
+    *ngSwitchCase='result'
+    *ngSwitchDefault
+*ngFor='let num of array; let idx = index'
+@Output() onAdd: EventEmitter<Post> = new EventEmitter<Post>() - передача родителю параметры выполняется через onAdd.emit = param
+<ng-tempate>
+<ng-content>    - render children elements
+
+            Decorators
+@Directive({selector: '[appName]'})
+@Input()
+@Output()
+@Component({
+    ...
+    provider: [name]             - имя локального сервиса
+})
+@HostListener('click', ['$event'])
+@HostBinding('style.border') elBorder = null
+@Injectable({providedIn: 'root'})           - сервисы (в параметрах указано куда автоматически зарегестрировать)
+
+
+            Pipes
+{{ e | number:'3.1-5' }}  - 3-сколько оставить значений до зарятой, 1-5 - оставить значений после запятой (рендж)
+@Pipe({name: 'bla', pure: false})   - pure:false отключает оптимизацию и пайп работает динамически
+
+            RsJs
+import {} from 'rxjs' - создание стримов
+import {} from 'rxjs/operators' - для операторов
+
+            Forms
+ReactiveFormsModule

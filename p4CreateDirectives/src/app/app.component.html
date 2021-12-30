@@ -1,0 +1,26 @@
+<div class="container">
+	<h1>Angular Directives</h1>
+	
+	
+	<p
+			appStyle="blue"
+			[dStyle]="{border: '2px solid blue', borderRadius: '5px'}"
+	>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, laborum!</p>
+	<p
+			appStyle="red"
+			[dStyle]="{border: '2px solid red', borderRadius: '20px'}"
+	>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, laborum!</p>
+	
+	<div class="wrap">
+		<button class="btn" (click)="toggle = !toggle">Toggle</button>
+		<div *ngIf="toggle">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque autem cumque cupiditate, delectus
+				exercitationem nobis obcaecati officiis quibusdam rem temporibus!</p>
+		</div>
+		<div class="wrap" *appNotif="toggle">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam et expedita impedit, ipsa pariatur quam?</p>
+		</div>
+	</div>
+</div>
+
+
